@@ -1,0 +1,94 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { CarouselSlide } from '@/lib/types';
+
+const DISPLAY_DURATION = 4000; // 4s per slide
+
+interface HeroHomeClientProps {
+  slides: CarouselSlide[];
+}
+
+export default function HeroHomeClient({ slides }: HeroHomeClientProps) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    if (slides.length <= 1) {
+      return;
+    }
+
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, DISPLAY_DURATION);
+
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
+  if (slides.length === 0) {
+    return (
+      <section className="relative h-screen flex items-center justify-center overflow-hidden z-10">
+        <div className="absolute inset-0 bg-brand-jet-black" />
+      </section>
+    );
+  }
+
+  return (
+    <section className="relative h-screen flex items-center justify-center overflow-hidden z-10">
+      {/* Carousel Images */}
+      {slides.map((slide, index) => {
+        const isActive = index === currentSlide;
+        const isPrevious = index === (currentSlide - 1 + slides.length) % slides.length;
+        const imagePath = `/images/carousel/${slide.filename}`;
+
+        return (
+          <div
+            key={slide.filename}
+            className={`absolute inset-0 transition-all duration-[1200ms] ease-out ${
+              isActive
+                ? 'opacity-100 scale-100 translate-y-0 z-10'
+                : isPrevious
+                ? 'opacity-0 scale-110 -translate-y-[2%] z-0'
+                : 'opacity-0 scale-110 translate-y-[2%] z-0'
+            }`}
+          >
+            <Image
+              src={imagePath}
+              alt={slide.altText ?? slide.headlineText}
+              fill
+              priority={index === 0}
+              className="object-cover"
+              quality={90}
+            />
+          </div>
+        );
+      })}
+
+      {/* Text Overlays */}
+      {slides.map((slide, index) => {
+        const isActive = index === currentSlide;
+
+        return (
+          <div
+            key={`text-${slide.filename}`}
+            className={`absolute bottom-24 left-8 md:bottom-32 md:left-16 z-30 transition-all duration-[800ms] ${
+              isActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+            }`}
+          >
+            <h2
+              className="text-5xl md:text-7xl lg:text-8xl font-bold text-white"
+              style={{
+                textShadow: '0 2px 10px rgba(0, 0, 0, 0.8), 0 4px 20px rgba(0, 0, 0, 0.5)',
+              }}
+            >
+              {slide.headlineText}
+            </h2>
+          </div>
+        );
+      })}
+
+      {/* Bottom gradient overlay for blending with stats section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 md:h-40 bg-gradient-to-t from-brand-jet-black/80 to-transparent z-20 pointer-events-none" />
+    </section>
+  );
+}
