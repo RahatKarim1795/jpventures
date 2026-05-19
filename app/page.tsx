@@ -1,5 +1,6 @@
 import Hero from '@/components/sections/Hero';
 import AtAGlance from '@/components/sections/AtAGlance';
+import OurStory from '@/components/sections/OurStory';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         ctaHref="/contact"
       />
       <AtAGlance />
+      <OurStory />
     </>
   );
 }
