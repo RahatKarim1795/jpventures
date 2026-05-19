@@ -23,7 +23,7 @@ export default function ImageStatement() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.45, delay: line.delay }}
-          className={`absolute left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-7xl font-semibold md:text-9xl ${line.top}`}
+          className={`absolute left-2/3 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-7xl font-normal md:text-9xl ${line.top}`}
         >
           {line.text}
         </motion.p>
