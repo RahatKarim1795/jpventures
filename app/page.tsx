@@ -6,18 +6,12 @@ import ImageStatement from '@/components/sections/ImageStatement';
 
 export default function Home() {
   return (
-    <>
-      <Hero
-        eyebrow="JP Ventures"
-        title="Future-Ready Spaces"
-        description="Purposeful design. Lasting value."
-        ctaLabel="Get In Touch"
-        ctaHref="/contact"
-      />
+    <div id="top">
+      <Hero />
       <AtAGlance />
       <OurStory />
       <Features />
       <ImageStatement />
-    </>
+    </div>
   );
 }

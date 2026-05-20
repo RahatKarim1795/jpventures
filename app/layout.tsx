@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { EB_Garamond, Geist, Geist_Mono } from "next/font/google";
+import Navbar from "@/components/navigation/Navbar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -35,7 +36,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${ebGaramond.variable} h-full antialiased`}
     >
-      <body className={`${ebGaramond.className} min-h-full flex flex-col`}>{children}</body>
+      <body className={`${ebGaramond.className} min-h-full flex flex-col`}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

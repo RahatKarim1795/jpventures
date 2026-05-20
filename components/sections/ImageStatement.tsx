@@ -4,15 +4,15 @@ import Image from 'next/image';
 import { motion } from 'motion/react';
 
 const LINES = [
-  { text: 'The best', top: 'top-[33%]', delay: 0 },
-  { text: 'comes as', top: 'top-[59%]', delay: 0.08 },
+  { text: 'The best', top: 'top-[25%]', delay: 0 },
+  { text: 'comes as', top: 'top-[45%]', delay: 0.08 },
   { text: 'standard', top: 'top-[85%]', delay: 0.16 },
 ] as const;
 
 export default function ImageStatement() {
   return (
-    <section className="relative h-screen overflow-hidden bg-[#1d1410] text-white">
-      <div className="absolute inset-x-[5%] top-[33%] bottom-[15%]">
+    <section id="projects" className="relative h-screen overflow-hidden bg-[#1d1410] text-white">
+      <div className="absolute inset-x-[5%] top-[25%] bottom-[15%]">
         <Image src="/images/10.jpeg" alt="JP Ventures feature image" fill className="object-cover" />
       </div>
 
