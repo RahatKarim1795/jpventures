@@ -1,7 +1,7 @@
 'use client';
 
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import React, { useMemo, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import * as THREE from 'three';
 
 interface AntigravityProps {
@@ -46,6 +46,23 @@ const AntigravityInner: React.FC<AntigravityProps> = ({
   const lastMousePos = useRef({ x: 0, y: 0 });
   const lastMouseMoveTime = useRef(0);
   const virtualMouse = useRef({ x: 0, y: 0 });
+  const globalPointer = useRef({ x: 0, y: 0 });
+  const hasGlobalPointer = useRef(false);
+
+  useEffect(() => {
+    const handlePointerMove = (event: MouseEvent) => {
+      const normalizedX = (event.clientX / window.innerWidth) * 2 - 1;
+      const normalizedY = -(event.clientY / window.innerHeight) * 2 + 1;
+
+      globalPointer.current = { x: normalizedX, y: normalizedY };
+      hasGlobalPointer.current = true;
+    };
+
+    window.addEventListener('mousemove', handlePointerMove, { passive: true });
+    return () => {
+      window.removeEventListener('mousemove', handlePointerMove);
+    };
+  }, []);
 
   const particles = useMemo(() => {
     const temp = [];
@@ -93,16 +110,19 @@ const AntigravityInner: React.FC<AntigravityProps> = ({
     if (!mesh) return;
 
     const { viewport: v, pointer: m } = state;
+    const pointer = hasGlobalPointer.current ? globalPointer.current : m;
 
-    const mouseDist = Math.sqrt(Math.pow(m.x - lastMousePos.current.x, 2) + Math.pow(m.y - lastMousePos.current.y, 2));
+    const mouseDist = Math.sqrt(
+      Math.pow(pointer.x - lastMousePos.current.x, 2) + Math.pow(pointer.y - lastMousePos.current.y, 2),
+    );
 
     if (mouseDist > 0.001) {
       lastMouseMoveTime.current = Date.now();
-      lastMousePos.current = { x: m.x, y: m.y };
+      lastMousePos.current = { x: pointer.x, y: pointer.y };
     }
 
-    let destX = (m.x * v.width) / 2;
-    let destY = (m.y * v.height) / 2;
+    let destX = (pointer.x * v.width) / 2;
+    let destY = (pointer.y * v.height) / 2;
 
     if (autoAnimate && Date.now() - lastMouseMoveTime.current > 2000) {
       const time = state.clock.getElapsedTime();

@@ -7,7 +7,7 @@ const LOGO_GOLD_FILTER =
   'brightness(0) saturate(100%) invert(78%) sepia(18%) saturate(800%) hue-rotate(330deg) brightness(95%) contrast(88%)';
 
 const INPUT_CLASS =
-  'w-full rounded border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-white/50 outline-none transition-colors focus:border-[#d1a893]/60 focus:ring-1 focus:ring-[#d1a893]/40';
+  'w-full rounded border border-white/20 bg-brand-brown px-4 py-3 text-white placeholder:text-white/50 outline-none transition-colors focus:border-[#d1a893]/60 focus:ring-1 focus:ring-[#d1a893]/40';
 
 const TIME_SLOTS = (() => {
   const slots: string[] = [];
@@ -40,7 +40,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="w-full bg-brand-brown-600 px-6 py-16 text-white md:py-24">
+    <section className="w-full px-6 py-16 text-white md:py-24">
       <div className="mx-auto max-w-3xl text-center">
         <span className="inline-block rounded-full border border-white/25 px-4 py-1.5 text-sm tracking-wide text-white/90">
           Contact Us

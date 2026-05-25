@@ -77,7 +77,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-brand-brown-600 text-white">
+    <footer className="w-full text-white">
       <div className="mx-auto max-w-6xl px-6 py-14 md:py-20">
         <div className="flex flex-col items-center text-center">
           <div className="relative h-14 w-14 md:h-16 md:w-16">
