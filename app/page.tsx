@@ -7,6 +7,7 @@ import ImageStatement from '@/components/sections/ImageStatement';
 import Gallery from '@/components/sections/Gallery';
 import VideoSection from '@/components/sections/VideoSection';
 import Footer from '@/components/sections/Footer';
+import ContactSection from '@/components/sections/ContactSection';
 
 const AMENITIES_SET_ONE = [
   { title: '24/7 Security' },
@@ -34,6 +35,7 @@ export default function Home() {
       <Amenities items={[...AMENITIES_SET_TWO]} reverse />
       <Gallery />
       <VideoSection />
+      <ContactSection />
       <Footer />
     </div>
   );
