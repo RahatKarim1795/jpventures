@@ -1,0 +1,4 @@
+1. ratio for hero image
+2. use branding brown in a darker shade for 2nd component and continue #1d1410 (dark)
+3. use the new images from drive
+4. logo only in footer

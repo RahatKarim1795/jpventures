@@ -4,6 +4,9 @@ import OurStory from '@/components/sections/OurStory';
 import Features from '@/components/sections/Features';
 import Amenities from '@/components/sections/Amenities';
 import ImageStatement from '@/components/sections/ImageStatement';
+import Gallery from '@/components/sections/Gallery';
+import VideoSection from '@/components/sections/VideoSection';
+import Footer from '@/components/sections/Footer';
 
 const AMENITIES_SET_ONE = [
   { title: '24/7 Security' },
@@ -29,6 +32,9 @@ export default function Home() {
       <ImageStatement />
       <Amenities items={[...AMENITIES_SET_ONE]} />
       <Amenities items={[...AMENITIES_SET_TWO]} reverse />
+      <Gallery />
+      <VideoSection />
+      <Footer />
     </div>
   );
 }

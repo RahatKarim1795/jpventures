@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { Cormorant_Garamond, Monsieur_La_Doulaise } from 'next/font/google';
 import { gsap } from 'gsap';
 
 const TAGLINE_LINES = [
@@ -9,6 +10,19 @@ const TAGLINE_LINES = [
   'Your prestigious address',
   'for generations',
 ] as const;
+
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+});
+
+const monsieurLaDoulaise = Monsieur_La_Doulaise({
+  subsets: ['latin'],
+  weight: '400',
+  display: 'swap',
+});
 
 export default function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -43,10 +57,13 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-[#120F17] text-white">
+    <section
+      className="relative w-full overflow-hidden bg-[#120F17] text-white"
+      style={{ height: 'max(100svh, calc(100vw * (3456 / 4888)))' }}
+    >
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/1.jpeg"
+          src="/images/05.jpg"
           alt=""
           fill
           priority
@@ -57,9 +74,10 @@ export default function Hero() {
       <div className="absolute top-0 left-1/2 z-10 flex h-1/3 w-1/2 flex-col items-end justify-end p-6 sm:p-8 md:p-10">
         <h1
           ref={titleRef}
-          className="text-right text-5xl font-semibold leading-tight lg:text-7xl"
+          className="text-right text-5xl font-semibold leading-[0.95] lg:text-7xl"
         >
-          JP Business Centre
+          <span className={`${monsieurLaDoulaise.className} block font-normal`}>JP</span>
+          <span className={`${cormorantGaramond.className} block`}>BUSINESS CENTRE</span>
         </h1>
       </div>
 

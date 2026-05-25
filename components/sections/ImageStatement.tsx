@@ -11,9 +11,9 @@ const LINES = [
 
 export default function ImageStatement() {
   return (
-    <section id="projects" className="relative h-screen overflow-hidden bg-[#1d1410] text-white">
+    <section id="projects" className="relative h-screen overflow-hidden bg-[#17100d] text-white">
       <div className="absolute inset-x-[5%] top-[25%] bottom-[15%]">
-        <Image src="/images/10.jpeg" alt="JP Ventures feature image" fill className="object-cover" />
+        <Image src="/images/10.jpg" alt="JP Ventures feature image" fill className="object-cover" />
       </div>
 
       {LINES.map((line) => (

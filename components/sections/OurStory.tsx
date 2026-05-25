@@ -13,13 +13,13 @@ const mrsSaintDelafield = Mrs_Saint_Delafield({
 
 export default function OurStory() {
   return (
-    <section className="w-full bg-[#101010] py-20 md:min-h-[120vh] md:py-28">
+    <section className="w-full bg-brand-brown-600 py-20 md:min-h-[120vh] md:py-28">
       <div className="mx-auto flex w-full max-w-[1680px] flex-col gap-16 px-4 md:flex-row md:items-stretch md:gap-6 md:px-8 lg:px-10">
         <div className="md:w-[58%]">
           <div className="relative h-full min-h-[420px] overflow-hidden md:min-h-[760px]">
             <Image
-              src="/images/sketch.png"
-              alt="Building sketch illustration"
+              src="/images/Line art-01a.svg"
+              alt="JP-ventures-Jams-Patron-Group-sketch"
               fill
               priority={false}
               className="object-contain object-left p-0 md:p-2"

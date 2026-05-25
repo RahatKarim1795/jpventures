@@ -56,7 +56,7 @@ const getIconForAmenity = (title: string): LucideIcon => {
 
 export default function Amenities({
   items,
-  imageSrc = '/images/5.jpeg',
+  imageSrc = '/images/09.jpg',
   imageAlt = 'JP Business Centre amenities',
   reverse = false,
   heading = 'Amenities',
@@ -74,7 +74,7 @@ export default function Amenities({
   );
 
   const contentPanel = (
-    <div className="flex flex-col justify-center bg-[#1d1410] px-6 py-10 md:px-10 md:py-12 lg:px-14">
+    <div className="flex flex-col justify-center bg-brand-brown-600 px-6 py-10 md:px-10 md:py-12 lg:px-14">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

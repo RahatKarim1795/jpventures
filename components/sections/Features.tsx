@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { motion } from 'motion/react';
 import Container from '@/components/ui/Container';
 
@@ -31,10 +30,21 @@ const FEATURE_ROWS = [
 export default function Features() {
   return (
     <section className="relative min-h-screen w-full overflow-hidden text-white">
-      <Image src="/images/aerial/1.jpeg" alt="Aerial project view" fill className="object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#1d1410]/10 via-[#1d1410]/50 to-[#1d1410]" />
-      <div className="absolute inset-x-0 bottom-0 h-[34vh] bg-gradient-to-b from-[#1d1410]/0 via-[#1d1410]/80 to-[#1d1410]" />
-      <div className="absolute inset-x-0 bottom-0 h-[12vh] bg-[#1d1410]" />
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster="/images/aerial/1.jpeg"
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover"
+      >
+        <source src="/video/aerial_1.mp4" type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#17100d]/10 via-[#17100d]/50 to-[#17100d]" />
+      <div className="absolute inset-x-0 bottom-0 h-[34vh] bg-gradient-to-b from-[#17100d]/0 via-[#17100d]/80 to-[#17100d]" />
+      <div className="absolute inset-x-0 bottom-0 h-[12vh] bg-[#17100d]" />
 
       <div className="relative z-10 py-8 md:py-14">
         <Container>
