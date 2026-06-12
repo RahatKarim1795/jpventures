@@ -6,6 +6,7 @@ import Amenities from '@/components/sections/Amenities';
 import ImageStatement from '@/components/sections/ImageStatement';
 import Gallery from '@/components/sections/Gallery';
 import VideoSection from '@/components/sections/VideoSection';
+import ProcessTimeline from '@/components/sections/ProcessTimeline';
 import ContactFooterShell from '@/components/sections/ContactFooterShell';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/sections/Footer';
@@ -44,6 +45,7 @@ export default function Home() {
       />
       <Gallery />
       <VideoSection />
+      <ProcessTimeline />
       <ContactFooterShell>
         <ContactSection />
         <Footer />
