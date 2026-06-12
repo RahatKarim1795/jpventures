@@ -3,18 +3,26 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 
-const NAV_LINKS = [
+const LEFT_LINKS = [
   { label: 'Home', href: '/#top' },
   { label: 'Projects', href: '/#projects' },
-  { label: 'Schedule a Visit', href: '/contact' },
 ] as const;
+
+const CTA_LINK = { label: 'Schedule a Visit', href: '/contact' } as const;
 
 const SCROLL_DELTA = 8;
 const REVEAL_THRESHOLD = 120;
 const TOP_OFFSET = 40;
 
+const linkClassName =
+  'text-xl font-medium tracking-wide text-white transition-opacity hover:opacity-70';
+
+const glassClassName =
+  'inline-flex items-center rounded-full border border-white/25 bg-white/10 px-5 py-2.5 text-xl font-medium tracking-wide text-white shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-xl backdrop-saturate-150 transition-all hover:bg-white/15 hover:border-white/35';
+
 export default function Navbar() {
   const [visible, setVisible] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
   const lastScrollY = useRef(0);
   const upwardAccum = useRef(0);
 
@@ -52,26 +60,101 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [menuOpen]);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
-    <div className="fixed left-1/2 top-6 z-50 -translate-x-1/2">
+    <div className="fixed inset-x-0 top-0 z-50 w-full">
       <nav
         aria-label="Main navigation"
-        className={`transition-all duration-300 ease-out ${
+        className={`w-full transition-all duration-300 ease-out ${
           visible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
         }`}
       >
-        <ul className="flex items-center gap-6 sm:gap-10">
-          {NAV_LINKS.map((link) => (
-            <li key={link.label}>
-              <Link
-                href={link.href}
-                className="text-xl font-medium tracking-wide text-white transition-opacity hover:opacity-70 sm:text-xl"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="flex w-full items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
+          {/* Desktop left links */}
+          <ul className="hidden items-center gap-6 md:flex md:gap-10">
+            {LEFT_LINKS.map((link) => (
+              <li key={link.label}>
+                <Link href={link.href} className={linkClassName}>
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* Desktop CTA */}
+          <Link href={CTA_LINK.href} className={`${glassClassName} hidden md:inline-flex`}>
+            {CTA_LINK.label}
+          </Link>
+
+          {/* Mobile hamburger */}
+          <button
+            type="button"
+            className="relative z-50 ml-auto flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white backdrop-blur-xl backdrop-saturate-150 md:hidden"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-nav-menu"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span className="sr-only">{menuOpen ? 'Close menu' : 'Open menu'}</span>
+            <span className="relative block h-4 w-5">
+              <span
+                className={`absolute left-0 top-0 block h-0.5 w-5 bg-white transition-all duration-300 ${
+                  menuOpen ? 'top-[7px] rotate-45' : ''
+                }`}
+              />
+              <span
+                className={`absolute left-0 top-[7px] block h-0.5 w-5 bg-white transition-all duration-300 ${
+                  menuOpen ? 'opacity-0' : ''
+                }`}
+              />
+              <span
+                className={`absolute left-0 top-[14px] block h-0.5 w-5 bg-white transition-all duration-300 ${
+                  menuOpen ? 'top-[7px] -rotate-45' : ''
+                }`}
+              />
+            </span>
+          </button>
+        </div>
+
+        {/* Mobile menu */}
+        <div
+          id="mobile-nav-menu"
+          className={`fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
+            menuOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
+          }`}
+          aria-hidden={!menuOpen}
+          onClick={closeMenu}
+        >
+          <div
+            className={`absolute right-5 top-[4.5rem] w-[min(calc(100%-2.5rem),20rem)] rounded-2xl border border-white/20 bg-white/10 p-6 shadow-[0_8px_32px_rgba(0,0,0,0.2)] backdrop-blur-2xl backdrop-saturate-150 transition-all duration-300 sm:right-8 ${
+              menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'
+            }`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <ul className="flex flex-col gap-5">
+              {LEFT_LINKS.map((link) => (
+                <li key={link.label}>
+                  <Link href={link.href} className={linkClassName} onClick={closeMenu}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href={CTA_LINK.href} className={glassClassName} onClick={closeMenu}>
+                  {CTA_LINK.label}
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </div>
   );

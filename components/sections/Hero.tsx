@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { Cormorant_Garamond, Monsieur_La_Doulaise } from 'next/font/google';
 import { gsap } from 'gsap';
 
 const TAGLINE_LINES = [
@@ -10,19 +9,6 @@ const TAGLINE_LINES = [
   'Your prestigious address',
   'for generations',
 ] as const;
-
-const cormorantGaramond = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  style: ['normal', 'italic'],
-  display: 'swap',
-});
-
-const monsieurLaDoulaise = Monsieur_La_Doulaise({
-  subsets: ['latin'],
-  weight: '400',
-  display: 'swap',
-});
 
 export default function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -74,10 +60,20 @@ export default function Hero() {
       <div className="absolute top-0 left-1/2 z-10 flex h-1/3 w-1/2 flex-col items-end justify-end p-6 sm:p-8 md:p-10">
         <h1
           ref={titleRef}
-          className="text-right text-5xl font-semibold leading-[0.95] lg:text-7xl"
+          className="text-left text-5xl font-semibold leading-[0.95] lg:text-7xl"
         >
-          <span className={`${monsieurLaDoulaise.className} block font-normal`}>JP</span>
-          <span className={`${cormorantGaramond.className} block`}>BUSINESS CENTRE</span>
+          <span
+            className="block text-[1.18em] font-normal"
+            style={{ fontFamily: 'var(--font-italianno), cursive' }}
+          >
+            JP
+          </span>
+          <span
+            className="block font-light"
+            style={{ fontFamily: 'var(--font-lato), sans-serif' }}
+          >
+            BUSINESS CENTER
+          </span>
         </h1>
       </div>
 

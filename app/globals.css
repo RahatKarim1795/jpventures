@@ -20,7 +20,8 @@
   --font-mono: var(--font-geist-mono);
   --font-serif: var(--font-eb-garamond);
   --font-brand-garamond: var(--font-cormorant-garamond);
-  --font-brand-cursive: var(--font-monsieur-la-doulaise);
+  --font-brand-cursive: var(--font-italianno);
+  --font-brand-lato: var(--font-lato);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -42,5 +43,9 @@ body {
 }
 
 .font-brand-cursive {
-  font-family: var(--font-monsieur-la-doulaise), cursive;
+  font-family: var(--font-italianno), cursive;
+}
+
+.font-brand-lato {
+  font-family: var(--font-lato), sans-serif;
 }

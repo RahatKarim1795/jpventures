@@ -7,15 +7,23 @@ import { Play } from 'lucide-react';
 
 const THUMBNAIL_HEIGHT = '60vh';
 const VIDEO_HEIGHT = '100vh';
+const VIDEO_SRC = '/video/Location_Promo.mp4';
 
 export default function VideoSection() {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handlePlay = () => {
+    const video = videoRef.current;
+
+    if (video && !video.currentSrc) {
+      video.src = VIDEO_SRC;
+      video.load();
+    }
+
     setIsPlaying(true);
     requestAnimationFrame(() => {
-      void videoRef.current?.play();
+      void video?.play();
     });
   };
 
@@ -27,10 +35,9 @@ export default function VideoSection() {
       <video
         ref={videoRef}
         className="absolute inset-0 h-full w-full object-cover"
-        src="/video/aerial_1.mp4"
         playsInline
         controls={isPlaying}
-        preload="metadata"
+        preload="none"
       />
 
       <AnimatePresence>

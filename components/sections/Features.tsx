@@ -58,7 +58,9 @@ export default function Features() {
                 transition={{ duration: 0.5, delay: index * 0.08 }}
               >
                 <p className="text-6xl font-semibold leading-none md:text-9xl">{stat.value}</p>
-                <p className="mt-3 text-sm text-[#d1a893] md:text-xl">{stat.label}</p>
+                <p className="mt-3 inline-flex items-center rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-sm font-medium text-white shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-xl backdrop-saturate-150 md:px-5 md:py-2 md:text-xl">
+                  {stat.label}
+                </p>
               </motion.div>
             ))}
           </div>

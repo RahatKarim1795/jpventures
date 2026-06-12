@@ -4,7 +4,8 @@ import {
   EB_Garamond,
   Geist,
   Geist_Mono,
-  Monsieur_La_Doulaise,
+  Italianno,
+  Lato,
 } from "next/font/google";
 import Navbar from "@/components/navigation/Navbar";
 import "./globals.css";
@@ -35,10 +36,18 @@ const cormorantGaramond = Cormorant_Garamond({
   display: "swap",
 });
 
-const monsieurLaDoulaise = Monsieur_La_Doulaise({
+const italianno = Italianno({
   subsets: ["latin"],
-  variable: "--font-monsieur-la-doulaise",
+  variable: "--font-italianno",
   weight: "400",
+  display: "swap",
+});
+
+const lato = Lato({
+  subsets: ["latin"],
+  variable: "--font-lato",
+  weight: ["100", "300", "400", "700", "900"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -55,7 +64,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${ebGaramond.variable} ${cormorantGaramond.variable} ${monsieurLaDoulaise.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${ebGaramond.variable} ${cormorantGaramond.variable} ${italianno.variable} ${lato.variable} h-full antialiased`}
     >
       <body className={`${ebGaramond.className} min-h-full flex flex-col`}>
         <Navbar />

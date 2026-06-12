@@ -28,12 +28,20 @@ export default function Home() {
   return (
     <div id="top">
       <Hero />
-      {/* <AtAGlance /> */}
       <OurStory />
       <Features />
       <ImageStatement />
-      <Amenities items={[...AMENITIES_SET_ONE]} />
-      <Amenities items={[...AMENITIES_SET_TWO]} reverse />
+      <Amenities
+        items={[...AMENITIES_SET_ONE]}
+        imageSrc="/images/amenities_1.jpeg"
+        imageAlt="Business professionals meeting inside JP Business Centre"
+      />
+      <Amenities
+        items={[...AMENITIES_SET_TWO]}
+        imageSrc="/images/amenities_2.jpeg"
+        imageAlt="Retail space inside JP Business Centre"
+        reverse
+      />
       <Gallery />
       <VideoSection />
       <ContactFooterShell>
