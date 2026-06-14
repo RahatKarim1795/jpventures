@@ -8,7 +8,7 @@ import Gallery from '@/components/sections/Gallery';
 import VideoSection from '@/components/sections/VideoSection';
 import ProcessTimeline from '@/components/sections/ProcessTimeline';
 import ContactFooterShell from '@/components/sections/ContactFooterShell';
-import ContactSection from '@/components/sections/ContactSection';
+import ContactSection2 from '@/components/sections/ContactSection2';
 import Footer from '@/components/sections/Footer';
 
 const AMENITIES_SET_ONE = [
@@ -47,7 +47,7 @@ export default function Home() {
       <VideoSection />
       <ProcessTimeline />
       <ContactFooterShell>
-        <ContactSection />
+        <ContactSection2 />
         <Footer />
       </ContactFooterShell>
     </div>
