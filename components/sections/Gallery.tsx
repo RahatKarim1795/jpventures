@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 
 const PANELS = [
   {
-    src: '/images/01.jpg',
+    src: '/images/07.jpg',
     alt: 'JP Ventures gallery image 1',
     className: 'col-start-1 row-span-2 row-start-1',
     sizes: '33vw',
@@ -19,14 +19,14 @@ const PANELS = [
     delay: 0.08,
   },
   {
-    src: '/images/03.jpg',
+    src: '/images/13.jpg',
     alt: 'JP Ventures gallery image 3',
     className: 'col-start-3 row-start-1',
     sizes: '33vw',
     delay: 0.16,
   },
   {
-    src: '/images/04.jpg',
+    src: '/images/dhaka_skyline2.jpeg',
     alt: 'JP Ventures gallery image 4',
     className: 'col-span-2 col-start-2 row-start-2',
     sizes: '66vw',

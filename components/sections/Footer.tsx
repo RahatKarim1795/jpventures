@@ -79,7 +79,7 @@ export default function Footer() {
   return (
     <footer className="w-full text-white">
       <div className="mx-auto max-w-6xl px-6 py-14 md:py-20">
-        <div className="flex flex-col items-center text-center">
+        {/* <div className="flex flex-col items-center text-center">
           <div className="relative h-14 w-14 md:h-16 md:w-16">
             <Image
               src="/images/JP-Venture-Line-Art.svg"
@@ -93,7 +93,7 @@ export default function Footer() {
             {BRAND_NAME}
           </h2>
           <p className="mt-2 text-sm text-white/70 md:text-base">{ADDRESS}</p>
-        </div>
+        </div> */}
 
         <div className="mt-12 grid grid-cols-1 gap-10 md:mt-16 md:grid-cols-3 md:gap-8">
           {CONTACT_ITEMS.map((item) => {
