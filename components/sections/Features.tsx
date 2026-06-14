@@ -4,26 +4,35 @@ import { motion } from 'motion/react';
 import Container from '@/components/ui/Container';
 
 const STATS = [
-  { value: '38.42', label: 'Katha of Space' },
-  { value: '35', label: 'Stories of Height' },
-  { value: '14,000', label: 'SFT Floor Plate' },
+  { value: '38.42', label: 'Katha Land Area' },
+  { value: '35', label: 'Storeys' },
+  { value: '14,000', label: 'Approx. SFT Floor Plate' },
 ] as const;
 
 const FEATURE_ROWS = [
   {
     title: 'Prime Location',
-    description:
-      'Positioned on a highly visible corner site with strong frontage and convenient access, the project offers outstanding address value for modern businesses.',
+    points: [
+      'Block I-Ext, Bashundhara R/A, Dhaka',
+      '130-ft Main Road Frontage',
+      'Corner Plot with 3-Side Road Access',
+    ],
   },
   {
-    title: 'Modern Design',
-    description:
-      'Flexible floor plates, efficient circulation, and a contemporary architectural language make each level adaptable to evolving commercial requirements.',
+    title: 'Architectural Design',
+    points: [
+      'Designed by DCON Design Studio',
+      '35-Storey Landmark Commercial Tower',
+      '5 Basement Levels',
+    ],
   },
   {
     title: 'Sustainable Build',
-    description:
-      'Future-focused planning and durable construction choices support long-term performance, comfort, and reliability across the life cycle of the building.',
+    points: [
+      'Unit Sizes from 1,750 – 2,490 SFT',
+      '14,000 SFT Full-Floor Commercial Configuration',
+      'Premium Business Address in Bashundhara R/A',
+    ],
   },
 ] as const;
 
@@ -77,7 +86,11 @@ export default function Features() {
                   className="grid w-full gap-8 py-10 md:grid-cols-2 md:gap-12 md:py-14"
                 >
                   <h3 className="text-3xl font-semibold leading-tight md:text-4xl">{feature.title}</h3>
-                  <p className="text-base leading-relaxed text-white/75 md:text-lg">{feature.description}</p>
+                  <ul className="list-disc pl-5 space-y-2 text-base leading-relaxed text-white/75 md:text-lg">
+                    {feature.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
                 </motion.div>
 
                 {index < FEATURE_ROWS.length - 1 ? <hr className="mx-auto w-4/5 border-white/30" /> : null}

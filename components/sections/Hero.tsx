@@ -6,8 +6,8 @@ import { gsap } from 'gsap';
 
 const TAGLINE_LINES = [
   'Architecture Excellence—',
-  'Your prestigious address',
-  'for generations',
+  'A landmark commercial address',
+  'in Bashundhara R/A',
 ] as const;
 
 export default function Hero() {

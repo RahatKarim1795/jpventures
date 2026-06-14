@@ -223,194 +223,86 @@ export const SITE_CONFIG = {
   defaultMetaImage: '/images/og-image.jpg', // Update when available
 } as const;
 
-export const HERO_CONTENT = {
-  home: {
-    title: 'Patron Group',
-    tagline: 'Towards Development',
-    description: 'Delivering infrastructure, construction, real estate, and engineering solutions that support sustainable development in Bangladesh.',
-    image: '/images/hero_home.jpg',
-    cta: {
-      text: 'View Our Projects',
-      href: '/projects',
-    },
-  },
-  about: {
-    title: 'About Patron Group',
-    description: 'A trusted Bangladeshi conglomerate in infrastructure, real estate, and engineering',
-  },
-  projects: {
-    title: 'Our Projects',
-    description: 'Explore our portfolio of premium developments in Bashundhara and Jolshiri',
-  },
-  contact: {
-    title: 'Get In Touch',
-    description: 'Let\'s discuss your real estate needs',
-  },
-  blogs: {
-    title: 'News & Insights',
-    description: 'Stay updated with the latest news, insights, and updates from Patron Group',
-  },
-  careers: {
-    title: 'Join Our Team',
-    description: 'Build your career with one of Bangladesh\'s leading conglomerates',
-  },
-  properties: {
-    title: 'Available Properties',
-    description: 'Browse land plots and apartments available for purchase across Dhaka',
-  },
-} as const;
 
-// Service areas
-export const SERVICE_AREAS = [
-  'Bashundhara Residential Area',
-  'Jolshiri',
-  'Dhaka',
-] as const;
 
 // Company office location for map
-export const MAP_MARKERS = [
-  {
-    key: 'office',
-    name: 'Patron Group - Head Office',
-    position: { lat: 23.814480724353214, lng: 90.43856628265402 },
-  },
-] as const;
+// export const MAP_MARKERS = [
+//   {
+//     key: 'office',
+//     name: 'Patron Group - Head Office',
+//     position: { lat: 23.814480724353214, lng: 90.43856628265402 },
+//   },
+// ] as const;
 
-// Features for real estate projects
-export const PROJECT_FEATURES = {
-  amenities: [
-    'CCTV Surveillance',
-    'Backup Generator',
-    'Lift/Elevator',
-    'Parking',
-    'Security',
-    'Community Space',
-  ],
-  specifications: [
-    'Land Size',
-    'Apartment Size',
-    'Number of Units',
-    'Number of Floors',
-    'Number of Parking',
-    'Front Road',
-    'Orientation',
-  ],
-} as const;
+// // Features for real estate projects
+// export const PROJECT_FEATURES = {
+//   amenities: [
+//     'CCTV Surveillance',
+//     'Backup Generator',
+//     'Lift/Elevator',
+//     'Parking',
+//     'Security',
+//     'Community Space',
+//   ],
+//   specifications: [
+//     'Land Size',
+//     'Apartment Size',
+//     'Number of Units',
+//     'Number of Floors',
+//     'Number of Parking',
+//     'Front Road',
+//     'Orientation',
+//   ],
+// } as const;
 
 // Stats for homepage counter section
-export const HOMEPAGE_STATS = [
-  {
-    value: '25+',
-    label: 'Years Experience',
-    icon: 'calendar',
-  },
-  {
-    value: '50+',
-    label: 'Projects Completed',
-    icon: 'building',
-  },
-  {
-    value: '2M+',
-    label: 'Sq. Ft. Delivered',
-    icon: 'area',
-  },
-  {
-    value: '500+',
-    label: 'Happy Families',
-    icon: 'people',
-  },
-] as const;
-
-// Why Choose Us section
-export const WHY_CHOOSE_US = [
-  {
-    title: 'Prime Locations',
-    description: 'Strategic locations in Dhaka\'s most sought-after areas including Bashundhara and Jolshiri.',
-    icon: 'location',
-  },
-  {
-    title: 'Quality Construction',
-    description: 'International standards with premium materials and expert craftsmanship in every project.',
-    icon: 'quality',
-  },
-  {
-    title: 'Timely Delivery',
-    description: 'Proven track record of completing projects on schedule with transparent timelines.',
-    icon: 'time',
-  },
-  {
-    title: 'Flexible Payment Plans',
-    description: 'Customized payment options designed to make your dream property accessible.',
-    icon: 'payment',
-  },
-  {
-    title: 'After-Sales Service',
-    description: 'Comprehensive support and maintenance services for complete peace of mind.',
-    icon: 'service',
-  },
-  {
-    title: 'Legal Compliance',
-    description: 'Complete documentation and RAJUK approval for all developments.',
-    icon: 'legal',
-  },
-] as const;
-
-// Testimonials
-export const TESTIMONIALS = [
-  {
-    name: 'Ahmed Rahman',
-    role: 'Apartment Owner',
-    location: 'Bashundhara Project',
-    quote: 'Exceptional quality and timely delivery. Patron Holdings made our dream home a reality with their professional approach and attention to detail.',
-    rating: 5,
-  },
-  {
-    name: 'Fatima Khan',
-    role: 'Commercial Space Owner',
-    location: 'Jolshiri Development',
-    quote: 'Outstanding service from start to finish. The team was responsive, transparent, and delivered exactly what they promised.',
-    rating: 5,
-  },
-  {
-    name: 'Karim Abdullah',
-    role: 'Investor',
-    location: 'Multiple Properties',
-    quote: 'I have invested in three properties with Patron Holdings. Their commitment to quality and customer satisfaction is unmatched in Dhaka.',
-    rating: 5,
-  },
-  {
-    name: 'Sarah Begum',
-    role: 'Homeowner',
-    location: 'Residential Complex',
-    quote: 'The entire process was smooth and professional. Patron Holdings truly understands what families need in a modern home.',
-    rating: 5,
-  },
-] as const;
+// export const HOMEPAGE_STATS = [
+//   {
+//     value: '25+',
+//     label: 'Years Experience',
+//     icon: 'calendar',
+//   },
+//   {
+//     value: '50+',
+//     label: 'Projects Completed',
+//     icon: 'building',
+//   },
+//   {
+//     value: '2M+',
+//     label: 'Sq. Ft. Delivered',
+//     icon: 'area',
+//   },
+//   {
+//     value: '500+',
+//     label: 'Happy Families',
+//     icon: 'people',
+//   },
+// ] as const;
 
 // Development Process Timeline
 export const DEVELOPMENT_PROCESS = [
   {
     step: '01',
-    title: 'Discovery & Planning',
-    description: 'Site acquisition, feasibility studies, and comprehensive project planning with regulatory approvals.',
+    title: 'Project Briefing',
+    description: 'Review the project vision, location, specifications and available commercial space options.',
     icon: 'search',
   },
   {
     step: '02',
-    title: 'Design & Architecture',
-    description: 'Architectural excellence with modern design, ensuring functionality and aesthetic appeal.',
+    title: 'Space Selection',
+    description: 'Choose from flexible office units or full-floor configurations based on your business or investment goals.',
     icon: 'design',
   },
   {
     step: '03',
-    title: 'Construction',
-    description: 'Quality execution with premium materials, expert supervision, and regular progress updates.',
+    title: 'Booking & Payment Plan',
+    description: 'Secure your preferred space through a structured booking process and flexible payment arrangement',
     icon: 'construction',
   },
   {
     step: '04',
     title: 'Handover & Support',
-    description: 'Seamless handover with complete documentation and ongoing after-sales support.',
+    description: 'Move forward with clear communication, progress updates and support through delivery.',
     icon: 'handover',
   },
 ] as const;

@@ -35,18 +35,14 @@ export default function OurStory() {
             <article className="p-2 md:col-start-1 md:row-start-1 md:pr-4 md:pt-4">
               <p className="mb-6 text-xl tracking-[0.18em] text-[#d1a893] uppercase md:text-5xl">Patron Group</p>
               <p className="max-w-[34ch] text-base leading-relaxed text-white md:text-lg">
-                Patron Group is focused on building future-ready residential and mixed-use spaces that balance timeless
-                design with practical urban living. From early planning to final delivery, the team prioritizes quality,
-                long-term value, and architecture that feels both modern and enduring.
+              With over two decades of real estate experience, Patron Group has shaped premium residential and commercial developments across Dhaka. Its approach brings together prime locations, lifestyle value and long-term urban growth.
               </p>
             </article>
 
             <article className="p-2 md:col-start-2 md:row-start-2 md:justify-self-end md:self-end md:pl-8 md:pt-10">
               <p className="mb-6 text-lg tracking-[0.18em] text-[#d1a893] uppercase md:text-5xl">Jams Group</p>
               <p className="max-w-[34ch] text-base leading-relaxed text-white md:text-lg">
-                Jams Group can represent the complementary strengths in execution, operations, and customer experience.
-                This story highlights how both groups work together to create stronger outcomes and a more complete
-                brand vision.
+              Founded in 2008, Jams Group has grown from real estate development into a diversified business group with strengths in construction, property services, design, trading and power solutions.
               </p>
             </article>
 

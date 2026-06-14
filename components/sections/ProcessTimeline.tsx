@@ -85,7 +85,7 @@ export default function ProcessTimeline() {
             Our Process
           </p>
           <h2 className="mt-4 text-3xl font-semibold md:text-4xl lg:text-5xl">
-            From Vision to Reality
+          Your Ownership Journey 
           </h2>
           <motion.div
             initial={{ opacity: 0, width: 0 }}
@@ -95,7 +95,7 @@ export default function ProcessTimeline() {
             className="mx-auto mt-5 h-[2px] rounded-full bg-[#d1a893]"
           />
           <p className="mt-6 text-base leading-relaxed text-white/75 md:text-lg">
-            A transparent, systematic approach ensuring quality and timely delivery at every stage
+          A guided journey from project briefing to booking, progress updates and handover
           </p>
         </motion.div>
 
@@ -122,10 +122,9 @@ export default function ProcessTimeline() {
         >
           <div className="flex flex-col items-center gap-8 rounded-lg border border-white/10 bg-white/5 px-8 py-10 md:flex-row md:justify-between md:px-12 md:py-12">
             <div className="text-center md:text-left">
-              <h3 className="text-2xl font-semibold md:text-3xl">Transparent Progress Updates</h3>
+              <h3 className="text-2xl font-semibold md:text-3xl">Private Project Consultation</h3>
               <p className="mt-3 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg">
-                Stay informed at every stage with regular updates, site visits, and direct
-                communication with our project team.
+              Book a dedicated session to review layouts, availability and ownership options
               </p>
             </div>
             <Link
