@@ -46,7 +46,7 @@ export default function ContactSection2() {
 
     // Retrieve the URL from env variables or fallback to manual string for testing
     const googleScriptUrl = 
-      process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL || 'PASTE_YOUR_WEB_APP_URL_HERE';
+      process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbwXJ_jFT4jAqHgu6PbYFHcOojN4vwm3bGtjXlEM2yUEKxNC1h7MFYauJBPZBfw4rXXF/exec';
 
     // Package the form data using standard URL search parameters to align with Apps Script structure
     const formData = new URLSearchParams();
