@@ -53,7 +53,7 @@ function TimelineStep({
 
       <div className="flex flex-col items-center text-center">
         <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full border border-[#d1a893]/35 bg-[#d1a893]/10">
-          <span className="font-brand-lato text-2xl font-semibold tracking-wide text-[#d1a893]">
+          <span className="text-2xl font-semibold tracking-wide text-[#d1a893]">
             {step}
           </span>
         </div>
@@ -73,7 +73,7 @@ function TimelineStep({
 
 export default function ProcessTimeline() {
   return (
-    <section className="w-full bg-brand-brown-600 py-20 text-white md:py-28">
+    <section className="w-full bg-brand-brown-600 py-20 font-serif text-white md:py-28">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -29,15 +29,21 @@ interface AmenitiesProps {
 
 const AMENITY_ICONS: Record<string, LucideIcon> = {
   security: ShieldCheck,
+  lift: Zap,
   elevator: Zap,
   power: Zap,
   backup: Zap,
   fire: Flame,
+  basement: Car,
   parking: Car,
   smart: Smartphone,
   access: Smartphone,
+  reception: Users,
+  lobby: Users,
+  corridor: Users,
   lounge: Users,
   common: Users,
+  garden: Leaf,
   green: Leaf,
   terrace: Leaf,
   gym: Dumbbell,
@@ -119,7 +125,7 @@ export default function Amenities({
   );
 
   return (
-    <section className="w-full overflow-hidden bg-[#1d1410] text-white">
+    <section className="w-full overflow-hidden bg-[#17100d] font-serif text-white">
       <div className="grid grid-cols-1 md:grid-cols-2">
         {reverse ? (
           <>

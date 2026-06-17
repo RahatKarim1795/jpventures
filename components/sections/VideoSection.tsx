@@ -29,7 +29,7 @@ export default function VideoSection() {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-[#17100d] transition-[height] duration-700 ease-in-out"
+      className="relative w-full overflow-hidden bg-[#17100d] font-serif transition-[height] duration-700 ease-in-out"
       style={{ height: isPlaying ? VIDEO_HEIGHT : THUMBNAIL_HEIGHT }}
     >
       <video
@@ -79,7 +79,7 @@ export default function VideoSection() {
               </motion.span>
             </button>
 
-            <p className="font-brand-garamond absolute bottom-8 left-8 z-20 text-5xl font-normal text-white md:text-7xl lg:text-8xl">
+            <p className="absolute bottom-8 left-8 z-20 text-5xl font-normal text-white md:text-7xl lg:text-8xl">
               Virtual Tour
             </p>
           </motion.div>

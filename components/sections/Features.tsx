@@ -38,7 +38,7 @@ const FEATURE_ROWS = [
 
 export default function Features() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden text-white">
+    <section className="relative min-h-screen w-full overflow-hidden font-serif text-white">
       <video
         autoPlay
         muted

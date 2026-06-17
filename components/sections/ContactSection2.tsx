@@ -7,7 +7,7 @@ const LOGO_GOLD_FILTER =
   'brightness(0) saturate(100%) invert(78%) sepia(18%) saturate(800%) hue-rotate(330deg) brightness(95%) contrast(88%)';
 
 const INPUT_CLASS =
-  'w-full rounded border border-white/20 bg-brand-brown px-4 py-3 text-white placeholder:text-white/50 outline-none transition-colors focus:border-[#d1a893]/60 focus:ring-1 focus:ring-[#d1a893]/40';
+  'w-full rounded border border-white/20 bg-brand-brown px-4 py-3 font-serif text-white placeholder:text-white/50 outline-none transition-colors focus:border-[#d1a893]/60 focus:ring-1 focus:ring-[#d1a893]/40';
 
 const TIME_SLOTS = (() => {
   const slots: string[] = [];
@@ -30,7 +30,7 @@ function getTodayDateString(): string {
 
 export default function ContactSection2() {
   const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [date, setDate] = useState(getTodayDateString);
   const [time, setTime] = useState('10:00');
   const [message, setMessage] = useState('');
@@ -51,7 +51,7 @@ export default function ContactSection2() {
     // Package the form data using standard URL search parameters to align with Apps Script structure
     const formData = new URLSearchParams();
     formData.append('name', name);
-    formData.append('email', email);
+    formData.append('phone', phone);
     formData.append('date', date);
     formData.append('time', time);
     formData.append('message', message);
@@ -71,7 +71,7 @@ export default function ContactSection2() {
         setSubmitStatus('success');
         // Clear inputs upon success
         setName('');
-        setEmail('');
+        setPhone('');
         setMessage('');
         setDate(getTodayDateString());
         setTime('10:00');
@@ -87,7 +87,7 @@ export default function ContactSection2() {
   };
 
   return (
-    <section className="w-full px-6 py-16 text-white md:py-24">
+    <section className="w-full px-6 py-16 font-serif text-white md:py-24">
       <div className="mx-auto max-w-3xl text-center">
         <span className="inline-block rounded-full border border-white/25 px-4 py-1.5 text-sm tracking-wide text-white/90">
           Contact Us
@@ -103,61 +103,81 @@ export default function ContactSection2() {
             priority={false}
           />
         </div>
+        <h2 className="mt-8 text-3xl font-semibold text-white md:text-4xl">
+          Private Consultation
+        </h2>
+        <p className="mt-3 text-base leading-relaxed text-white/75 md:text-lg">
+          Schedule a private briefing for JP Business Centre.
+        </p>
 
         <form onSubmit={handleSubmit} className="mt-12 text-left">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            <input
-              type="text"
-              name="name"
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Your Name"
-              className={INPUT_CLASS}
-              autoComplete="name"
-            />
-            <input
-              type="email"
-              name="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Your Email"
-              className={INPUT_CLASS}
-              autoComplete="email"
-            />
-            <input
-              type="date"
-              name="date"
-              required
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              className={`${INPUT_CLASS} [color-scheme:dark]`}
-            />
-            <select
-              name="time"
-              required
-              value={time}
-              onChange={(e) => setTime(e.target.value)}
-              className={`${INPUT_CLASS} cursor-pointer appearance-none`}
-              aria-label="Preferred time"
-            >
-              {TIME_SLOTS.map((slot) => (
-                <option key={slot} value={slot} className="bg-brand-brown-600 text-white">
-                  {slot}
-                </option>
-              ))}
-            </select>
+            <label className="block">
+              <span className="mb-2 block text-sm font-medium text-white/80">Name</span>
+              <input
+                type="text"
+                name="name"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Your Name"
+                className={INPUT_CLASS}
+                autoComplete="name"
+              />
+            </label>
+            <label className="block">
+              <span className="mb-2 block text-sm font-medium text-white/80">Number</span>
+              <input
+                type="tel"
+                name="phone"
+                required
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="Phone / WhatsApp Number"
+                className={INPUT_CLASS}
+                autoComplete="tel"
+              />
+            </label>
+            <label className="block">
+              <span className="mb-2 block text-sm font-medium text-white/80">Preferred Date</span>
+              <input
+                type="date"
+                name="date"
+                required
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                className={`${INPUT_CLASS} [color-scheme:dark]`}
+              />
+            </label>
+            <label className="block">
+              <span className="mb-2 block text-sm font-medium text-white/80">Preferred Time</span>
+              <select
+                name="time"
+                required
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
+                className={`${INPUT_CLASS} cursor-pointer appearance-none`}
+              >
+                {TIME_SLOTS.map((slot) => (
+                  <option key={slot} value={slot} className="bg-brand-brown-600 text-white">
+                    {slot}
+                  </option>
+                ))}
+              </select>
+            </label>
           </div>
 
-          <textarea
-            name="message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder="Notes (optional)"
-            rows={4}
-            className={`${INPUT_CLASS} mt-4 resize-y`}
-          />
+          <label className="mt-4 block">
+            <span className="mb-2 block text-sm font-medium text-white/80">Message / Notes</span>
+            <textarea
+              name="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Message / Notes"
+              rows={4}
+              className={`${INPUT_CLASS} resize-y`}
+            />
+          </label>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4">
             <button

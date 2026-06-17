@@ -60,17 +60,16 @@ export default function Hero() {
       <div className="absolute top-0 left-1/2 z-10 flex h-1/3 w-1/2 flex-col items-end justify-end p-6 sm:p-8 md:p-10">
         <h1
           ref={titleRef}
-          className="text-left text-5xl font-semibold leading-[0.95] lg:text-7xl"
+          className="text-left font-serif text-5xl font-semibold leading-[0.95] lg:text-7xl"
         >
           <span
-            className="block text-[1.18em] font-normal"
+            className="block text-[2.36em] font-normal pl-4 text-[#D3D6D8]"
             style={{ fontFamily: 'var(--font-italianno), cursive' }}
           >
             JP
           </span>
           <span
-            className="block font-light"
-            style={{ fontFamily: 'var(--font-lato), sans-serif' }}
+            className="block font-light text-[#D3D6D8]"
           >
             BUSINESS CENTER
           </span>
@@ -78,7 +77,7 @@ export default function Hero() {
       </div>
 
       <div className="absolute top-[60%] left-[20%] z-10 w-[60%]">
-        <p className="text-left text-2xl leading-snug font-medium lg:text-4xl">
+        <p className="text-left font-serif text-2xl leading-snug font-medium lg:text-4xl">
           {TAGLINE_LINES.map((line, index) => (
             <span
               key={line}

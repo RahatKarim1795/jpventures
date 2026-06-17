@@ -15,10 +15,10 @@ const REVEAL_THRESHOLD = 120;
 const TOP_OFFSET = 40;
 
 const linkClassName =
-  'text-xl font-medium tracking-wide text-white transition-opacity hover:opacity-70';
+  'font-serif text-xl font-medium tracking-wide text-white transition-opacity hover:opacity-70';
 
 const glassClassName =
-  'inline-flex items-center rounded-full border border-white/25 bg-white/10 px-5 py-2.5 text-xl font-medium tracking-wide text-white shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-xl backdrop-saturate-150 transition-all hover:bg-white/15 hover:border-white/35';
+  'inline-flex items-center rounded-full border border-white/25 bg-white/10 px-5 py-2.5 font-serif text-xl font-medium tracking-wide text-white shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-xl backdrop-saturate-150 transition-all hover:bg-white/15 hover:border-white/35';
 
 export default function Navbar() {
   const [visible, setVisible] = useState(true);
