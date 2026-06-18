@@ -39,6 +39,13 @@ export default function OurStory() {
               </p>
             </article>
 
+            <span
+              aria-hidden="true"
+              className={`pointer-events-none px-2 text-7xl leading-none text-white md:hidden ${mrsSaintDelafield.className}`}
+            >
+              &
+            </span>
+
             <article className="p-2 md:col-start-2 md:row-start-2 md:justify-self-end md:self-end md:pl-8 md:pt-10">
               <p className="mb-6 text-lg tracking-[0.18em] text-[#d1a893] uppercase md:text-5xl">Jams Group</p>
               <p className="max-w-[34ch] text-base leading-relaxed text-white md:text-lg">

@@ -57,13 +57,13 @@ export default function Hero() {
         />
       </div>
 
-      <div className="absolute top-0 left-1/2 z-10 flex h-1/3 w-1/2 flex-col items-end justify-end p-6 sm:p-8 md:p-10">
+      <div className="absolute left-0 top-24 z-10 flex w-full flex-col items-center justify-start px-6 sm:top-28 sm:px-8 md:left-1/2 md:top-0 md:h-1/3 md:w-1/2 md:items-end md:justify-end md:p-10">
         <h1
           ref={titleRef}
-          className="text-left font-serif text-5xl font-semibold leading-[0.95] lg:text-7xl"
+          className="text-center font-serif text-4xl font-semibold leading-[0.95] sm:text-5xl md:text-left lg:text-7xl"
         >
           <span
-            className="block text-[2.36em] font-normal pl-4 text-[#D3D6D8]"
+            className="block pl-0 text-[2.36em] font-normal text-[#D3D6D8] md:pl-4"
             style={{ fontFamily: 'var(--font-italianno), cursive' }}
           >
             JP

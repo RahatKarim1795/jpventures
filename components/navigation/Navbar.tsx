@@ -18,7 +18,7 @@ const linkClassName =
   'font-serif text-xl font-medium tracking-wide text-white transition-opacity hover:opacity-70';
 
 const glassClassName =
-  'inline-flex items-center rounded-full border border-white/25 bg-white/10 px-5 py-2.5 font-serif text-xl font-medium tracking-wide text-white shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-xl backdrop-saturate-150 transition-all hover:bg-white/15 hover:border-white/35';
+  'items-center rounded-full border border-white/25 bg-white/10 px-5 py-2.5 font-serif text-xl font-medium tracking-wide text-white shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-xl backdrop-saturate-150 transition-all hover:bg-white/15 hover:border-white/35';
 
 export default function Navbar() {
   const [visible, setVisible] = useState(true);
@@ -104,37 +104,37 @@ export default function Navbar() {
             onClick={() => setMenuOpen((open) => !open)}
           >
             <span className="sr-only">{menuOpen ? 'Close menu' : 'Open menu'}</span>
-            <span className="relative block h-4 w-5">
+            <span className="relative block h-5 w-5">
               <span
-                className={`absolute left-0 top-0 block h-0.5 w-5 bg-white transition-all duration-300 ${
-                  menuOpen ? 'top-[7px] rotate-45' : ''
+                className={`absolute left-0 top-1/2 block h-0.5 w-5 origin-center bg-white transition-all duration-300 ${
+                  menuOpen ? '-translate-y-1/2 rotate-45' : '-translate-y-[8px]'
                 }`}
               />
               <span
-                className={`absolute left-0 top-[7px] block h-0.5 w-5 bg-white transition-all duration-300 ${
+                className={`absolute left-0 top-1/2 block h-0.5 w-5 -translate-y-1/2 bg-white transition-all duration-300 ${
                   menuOpen ? 'opacity-0' : ''
                 }`}
               />
               <span
-                className={`absolute left-0 top-[14px] block h-0.5 w-5 bg-white transition-all duration-300 ${
-                  menuOpen ? 'top-[7px] -rotate-45' : ''
+                className={`absolute left-0 top-1/2 block h-0.5 w-5 origin-center bg-white transition-all duration-300 ${
+                  menuOpen ? '-translate-y-1/2 -rotate-45' : 'translate-y-[6px]'
                 }`}
               />
             </span>
           </button>
         </div>
-
+        
         {/* Mobile menu */}
         <div
           id="mobile-nav-menu"
-          className={`fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
+          className={`fixed inset-0 z-40 bg-[#17100d] transition-opacity duration-300 md:hidden ${
             menuOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
           }`}
           aria-hidden={!menuOpen}
           onClick={closeMenu}
         >
           <div
-            className={`absolute right-5 top-[4.5rem] w-[min(calc(100%-2.5rem),20rem)] rounded-2xl border border-white/20 bg-white/10 p-6 shadow-[0_8px_32px_rgba(0,0,0,0.2)] backdrop-blur-2xl backdrop-saturate-150 transition-all duration-300 sm:right-8 ${
+            className={`absolute right-5 top-[4.5rem] w-[min(calc(100%-2.5rem),20rem)] rounded-2xl border border-white/20 bg-[#17100d] p-6 shadow-[0_8px_32px_rgba(0,0,0,0.2)] transition-all duration-300 sm:right-8 ${
               menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'
             }`}
             onClick={(e) => e.stopPropagation()}
@@ -148,7 +148,7 @@ export default function Navbar() {
                 </li>
               ))}
               <li>
-                <Link href={CTA_LINK.href} className={glassClassName} onClick={closeMenu}>
+                <Link href={CTA_LINK.href} className={`${glassClassName} inline-flex`} onClick={closeMenu}>
                   {CTA_LINK.label}
                 </Link>
               </li>
