@@ -5,8 +5,8 @@ import Container from '@/components/ui/Container';
 
 const STATS = [
   { value: '38.42', label: 'Katha Land Area' },
-  { value: '35', label: 'Storeys' },
-  { value: '14,000', label: 'Approx. SFT Floor Plate' },
+  { value: '30', label: 'Storeys' },
+  { value: '14000', label: 'Approx. SFT Floor Plate' },
 ] as const;
 
 const FEATURE_ROWS = [
@@ -22,14 +22,14 @@ const FEATURE_ROWS = [
     title: 'Architectural Design',
     points: [
       'Designed by DCON Design Studio',
-      '35-Storey Landmark Commercial Tower',
+      '30-Storey Landmark Commercial Tower',
       '5 Basement Levels',
     ],
   },
   {
     title: 'Sustainable Build',
     points: [
-      'Unit Sizes from 1,750 – 2,490 SFT',
+      'Unit size Approx 2000 to 14000 sft',
       '14,000 SFT Full-Floor Commercial Configuration',
       'Premium Business Address in Bashundhara R/A',
     ],
