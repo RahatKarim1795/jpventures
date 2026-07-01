@@ -11,7 +11,7 @@ const LINES = [
 
 export default function ImageStatement() {
   return (
-    <section id="projects" className="relative h-screen overflow-hidden bg-[#17100d] font-serif text-white">
+    <section id="image_statement" className="relative h-screen overflow-hidden bg-[#17100d] font-serif text-white">
       <div className="absolute inset-x-[5%] top-[25%] bottom-[15%]">
         <Image src="/images/10.jpg" alt="JP Ventures feature image" fill className="object-cover" />
       </div>

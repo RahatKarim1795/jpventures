@@ -29,6 +29,7 @@ export default function VideoSection() {
 
   return (
     <section
+      id="projects"
       className="relative w-full overflow-hidden bg-[#17100d] font-serif transition-[height] duration-700 ease-in-out"
       style={{ height: isPlaying ? VIDEO_HEIGHT : THUMBNAIL_HEIGHT }}
     >
