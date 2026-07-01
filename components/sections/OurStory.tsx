@@ -15,14 +15,14 @@ export default function OurStory() {
   return (
     <section className="w-full bg-brand-brown-600 py-20 md:min-h-[120vh] md:py-28">
       <div className="mx-auto flex w-full max-w-[1680px] flex-col gap-16 px-4 md:flex-row md:items-stretch md:gap-6 md:px-8 lg:px-10">
-        <div className="md:w-[58%]">
-          <div className="relative h-full min-h-[420px] overflow-hidden md:min-h-[760px]">
+        <div className="md:w-[58%] md:-my-10">
+          <div className="relative h-full min-h-[420px] overflow-hidden md:min-h-[820px]">
             <Image
-              src="/images/Line art-01a.svg"
+              src="/images/building_line_art1.png"
               alt="JP-ventures-Jams-Patron-Group-sketch"
               fill
               priority={false}
-              className="object-contain object-left p-0 md:p-2"
+              className="object-contain object-left object-center md:scale-y-110 md:origin-center"
               sizes="(min-width: 768px) 58vw, 100vw"
             />
           </div>

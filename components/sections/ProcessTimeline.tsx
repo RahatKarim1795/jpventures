@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import Container from '@/components/ui/Container';
 import { DEVELOPMENT_PROCESS } from '@/lib/utils/constants';
+import { scrollToContactSection } from '@/lib/utils/scrollToContactSection';
 
 const ICON_MAP: Record<string, LucideIcon> = {
   search: Search,
@@ -128,7 +129,11 @@ export default function ProcessTimeline() {
               </p>
             </div>
             <Link
-              href="/contact"
+              href="/#contact"
+              onClick={(event) => {
+                if (!scrollToContactSection()) return;
+                event.preventDefault();
+              }}
               className="inline-flex shrink-0 items-center bg-[#d1a893] px-10 py-3.5 text-sm font-semibold uppercase tracking-widest text-brand-brown transition-opacity hover:opacity-90"
             >
               Start Your Journey

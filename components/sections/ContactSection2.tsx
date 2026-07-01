@@ -46,7 +46,7 @@ export default function ContactSection2() {
 
     // Retrieve the URL from env variables or fallback to manual string for testing
     const googleScriptUrl = 
-      process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbwXJ_jFT4jAqHgu6PbYFHcOojN4vwm3bGtjXlEM2yUEKxNC1h7MFYauJBPZBfw4rXXF/exec';
+      process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL || '';
 
     // Package the form data using standard URL search parameters to align with Apps Script structure
     const formData = new URLSearchParams();
@@ -87,7 +87,7 @@ export default function ContactSection2() {
   };
 
   return (
-    <section className="w-full px-6 py-16 font-serif text-white md:py-24">
+    <section id="contact" tabIndex={-1} className="w-full px-6 py-16 font-serif text-white md:py-24">
       <div className="mx-auto max-w-3xl text-center">
         <span className="inline-block rounded-full border border-white/25 px-4 py-1.5 text-sm tracking-wide text-white/90">
           Contact Us
@@ -107,7 +107,7 @@ export default function ContactSection2() {
           Private Consultation
         </h2>
         <p className="mt-3 text-base leading-relaxed text-white/75 md:text-lg">
-          Schedule a private briefing for JP Business Centre.
+          Schedule a private briefing for JP Business Center.
         </p>
 
         <form onSubmit={handleSubmit} className="mt-12 text-left">

@@ -63,7 +63,7 @@ const getIconForAmenity = (title: string): LucideIcon => {
 export default function Amenities({
   items,
   imageSrc = '/images/09.jpg',
-  imageAlt = 'JP Business Centre amenities',
+  imageAlt = 'JP Business Center amenities',
   reverse = false,
   heading = 'Amenities',
 }: AmenitiesProps) {

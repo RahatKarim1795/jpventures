@@ -1,14 +1,15 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type MouseEvent } from 'react';
 import Link from 'next/link';
+import { scrollToContactSection } from '@/lib/utils/scrollToContactSection';
 
 const LEFT_LINKS = [
   { label: 'Home', href: '/#top' },
   { label: 'Projects', href: '/#projects' },
 ] as const;
 
-const CTA_LINK = { label: 'Schedule a Visit', href: '/contact' } as const;
+const CTA_LINK = { label: 'Schedule a Visit', href: '/#contact' } as const;
 
 const SCROLL_DELTA = 8;
 const REVEAL_THRESHOLD = 120;
@@ -68,6 +69,11 @@ export default function Navbar() {
   }, [menuOpen]);
 
   const closeMenu = () => setMenuOpen(false);
+  const handleCtaClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (!scrollToContactSection()) return;
+    event.preventDefault();
+    closeMenu();
+  };
 
   return (
     <div className="fixed inset-x-0 top-0 z-50 w-full">
@@ -90,7 +96,7 @@ export default function Navbar() {
           </ul>
 
           {/* Desktop CTA */}
-          <Link href={CTA_LINK.href} className={`${glassClassName} hidden md:inline-flex`}>
+          <Link href={CTA_LINK.href} className={`${glassClassName} hidden md:inline-flex`} onClick={handleCtaClick}>
             {CTA_LINK.label}
           </Link>
 
@@ -148,7 +154,7 @@ export default function Navbar() {
                 </li>
               ))}
               <li>
-                <Link href={CTA_LINK.href} className={`${glassClassName} inline-flex`} onClick={closeMenu}>
+                <Link href={CTA_LINK.href} className={`${glassClassName} inline-flex`} onClick={handleCtaClick}>
                   {CTA_LINK.label}
                 </Link>
               </li>

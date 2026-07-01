@@ -84,7 +84,7 @@ export default function AtAGlance() {
                 transition={{ delay: 0.15 }}
                 className="mt-8 max-w-2xl text-4xl font-semibold leading-tight text-white md:text-5xl lg:text-6xl"
               >
-                JP Business Centre — Key Specifications
+                JP Business Center — Key Specifications
               </motion.p>
             </div>
 

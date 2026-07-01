@@ -1,5 +1,6 @@
 import Hero from '@/components/sections/Hero';
-import AtAGlance from '@/components/sections/AtAGlance';
+import Trial_Hero from '@/components/sections/Trial_Hero';
+// import AtAGlance from '@/components/sections/AtAGlance';
 import OurStory from '@/components/sections/OurStory';
 import Features from '@/components/sections/Features';
 import Amenities from '@/components/sections/Amenities';
@@ -29,6 +30,7 @@ export default function Home() {
   return (
     <div id="top">
       <Hero />
+      <Trial_Hero />
       <OurStory />
       <Features />
       <ImageStatement />
@@ -40,13 +42,13 @@ export default function Home() {
           heading="Core Infrastructure"
           items={[...AMENITIES_SET_ONE]}
           imageSrc="/images/amenities_1.jpeg"
-          imageAlt="Business professionals meeting inside JP Business Centre"
+          imageAlt="Business professionals meeting inside JP Business Center"
         />
         <Amenities
           heading="Business Amenities"
           items={[...AMENITIES_SET_TWO]}
           imageSrc="/images/amenities_2.jpeg"
-          imageAlt="Retail space inside JP Business Centre"
+          imageAlt="Retail space inside JP Business Center"
           reverse
         />
       </section>

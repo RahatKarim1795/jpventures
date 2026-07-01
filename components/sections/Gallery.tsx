@@ -26,7 +26,7 @@ const PANELS = [
     delay: 0.16,
   },
   {
-    src: '/images/dhaka_skyline2.jpeg',
+    src: '/images/15.jpeg',
     alt: 'JP Ventures gallery image 4',
     className: 'col-span-2 col-start-2 row-start-2',
     sizes: '66vw',

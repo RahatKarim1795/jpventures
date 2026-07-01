@@ -34,7 +34,7 @@ export default function Footer() {
             <MapPin size={40} strokeWidth={1.5} />
           </div>
           <h2 className="font-brand-garamond mt-4 text-3xl font-semibold tracking-wide md:text-4xl">
-            JP Business Centre
+            JP Business Center
           </h2>
           <p className="mt-2 text-sm text-white/70 md:text-base">{ADDRESS}</p>
           <p className="mt-1 text-sm text-white/70 md:text-base">A creation of Jams & Patron.</p>
